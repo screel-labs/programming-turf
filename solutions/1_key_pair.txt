@@ -1,5 +1,9 @@
 Python3
 *************************************************SOLUTION 1: HASHING******************************************
+CODE BRIEF: Works using concept of hashing table. In code, 'Hash' list is to hold count of each element. If an element is available in 'C' it shall be added to the hash. say, the list has '2' 4 times. then Hash[2]=4. Now, we need atleast one pair to form the sum 
+X'. So, when you consider an element, say C[i], if X-C[i] is also available, then result = "Yes". so, if Hash[X-C[i]] is greater than or equal to 1, there exist a pair. Since the range is 1-1000 and hence the space consumption is small, we can use this technique. 
+Time complexity is O(n)
+
 from sys import stdin, stdout
 T= int(input())
 while T>0:
@@ -8,9 +12,9 @@ while T>0:
     N, X = nextLine.split()
     N, X = [int(N), int (X)]
     nextLine= stdin.readline()
-    Hash = [0]*1001
+    Hash = [0]*1001 
     C= list(map(int,nextLine.split()))
-    for element in 
+    for element in C:
         Hash[element]+=1
     flag = False
     for element in C:
@@ -29,6 +33,9 @@ while T>0:
         print("No")
 
 *************************************************SOLUTION 2: SORTING******************************************
+CODE BRIEF: This works kind of like quick sort. In quick sort, we have to chose a pivot element and revamp the list from either of the corner. Likewise, here we will start from both 1st(lowest) and last(highest) element.(The list should be sorted before) If the sum is more than X, then highest element cannot be a part of the pair which gives sum 'X'. Hence we should look up on the next least greatest (N-1th) element than last. If the sum  is less than 'X', then lowest element cannot be a part which makes us to look upon the next least smallest element. If there exist a pair, the code will 'break' if there exist a pair. Unlike hash method above, this will consume only necessary space for computation. 
+Time complexity is O(n)
+
 from sys import stdin, stdout
 T= int(input())
 while T>0:
