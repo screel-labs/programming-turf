@@ -1,1 +1,55 @@
-Solution will be shared soon
+Python3
+*************************************************SOLUTION 1: HASHING******************************************
+from sys import stdin, stdout
+T= int(input())
+while T>0:
+    T-=1
+    nextLine= stdin.readline()
+    N, X = nextLine.split()
+    N, X = [int(N), int (X)]
+    nextLine= stdin.readline()
+    Hash = [0]*1001
+    C= list(map(int,nextLine.split()))
+    for element in 
+        Hash[element]+=1
+    flag = False
+    for element in C:
+        if X-element>=0 and X-element<=1000:
+            if (2*element) != X:
+                if Hash[X-element] >0:
+                    print ("Yes")
+                    flag = True
+                    break
+            else:
+                if Hash[X-element] >1:
+                    print ("Yes")
+                    flag = True
+                    break
+    if not(flag):
+        print("No")
+
+*************************************************SOLUTION 2: SORTING******************************************
+from sys import stdin, stdout
+T= int(input())
+while T>0:
+    T-=1
+    nextLine= stdin.readline()
+    N, X = nextLine.split()
+    N, X = [int(N), int (X)]
+    nextLine= stdin.readline()
+    C= list(map(int,nextLine.split()))
+    C.sort()
+    i=0
+    flag = False
+    N-=1
+    while i < N:
+        if C[N] + C[i] == X:
+            print ("Yes")
+            flag = True
+            break
+        elif C[N] + C[i] > X:
+            N-=1
+        elif C[N] + C[i] < X:
+            i+=1
+    if not(flag):
+        print ("No")
