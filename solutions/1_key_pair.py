@@ -1,5 +1,5 @@
 #program to check whether there exist atlest one pair(a,b) such the sum of a+b=given sum and a,b belongs to given array,
-#time and space complexity is O(n)
+#time and space complexity is O(nlogn)
 
 # Binary Search implementation
 # Returns index of x in arr if present, else -1
