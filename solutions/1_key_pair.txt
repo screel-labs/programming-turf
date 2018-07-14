@@ -43,7 +43,7 @@ list from either of the corner. Likewise, here we will start from both 1st(lowes
 is less than 'X', then lowest element cannot be a part which makes us to look upon the next least smallest element.
 If there exist a pair, the code will 'break' if there exist a pair. Unlike hash method above, this will consume
 only necessary space for computation. 
-Time complexity is O(n)
+Time complexity is O(nlogn)
 
 from sys import stdin, stdout
 T= int(input())
